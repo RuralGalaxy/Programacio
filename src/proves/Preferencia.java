@@ -1,21 +1,22 @@
 package proves;
 
-public class Preferencia {
+public class Preferencia implements Comparable<Preferencia> {
 
-    public interface Comparable {
-
-        public int compareTo(Object o);
-    }
-
-    private int ordenar;
+    private int ordre;
     private String plat;
 
-    public int getOrdenar() {
-        return ordenar;
+    public Preferencia(int ordre, String plat) {
+        super();
+        this.ordre = ordre;
+        this.plat = plat;
     }
 
-    public void setOrdenar(int ordenar) {
-        this.ordenar = ordenar;
+    public int getOrdre() {
+        return ordre;
+    }
+
+    public void setOrdre(int ordre) {
+        this.ordre = ordre;
     }
 
     public String getPlat() {
@@ -27,8 +28,19 @@ public class Preferencia {
     }
 
     @Override
-    public String toString() {
-        return "Preferencia{" + "ordenar=" + ordenar + ", plat=" + plat + '}';
+    public int compareTo(Preferencia b) {
+        if (this.ordre < b.ordre) {
+            return 1;
+        } else if (this.ordre == b.ordre) {
+            return 0;
+        } else {
+            return -1;
+        }
+
     }
 
+    @Override
+    public String toString() {
+        return "Preferencia [ordre = " + ordre + ", plat = " + plat + "]";
+    }
 }

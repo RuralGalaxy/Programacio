@@ -15,10 +15,6 @@ public class ElementSencer {
 		this.seguent = seguent;
 	}
 
-    public ElementSencer(int primer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 	public int getInfo() {
 		return info;
 	}
@@ -27,8 +23,8 @@ public class ElementSencer {
 		return seguent;
 	}
 	
-	public ElementSencer setSeguent() {
-		return seguent;
+	public void setSeguent(ElementSencer seguent) {
+		this.seguent = seguent;
 	}
 
 	@Override

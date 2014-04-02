@@ -1,34 +1,36 @@
 package contenidors;
 
 /**
- * 
+ *
  * @author Rafel Sastre Mas
  */
-
 public class Element<T> {
-	private T info;
-	private Element seguent;
 
-	public Element(T info, Element seguent) {
-		this.info = info;
-		this.seguent = seguent;
-	}
+    private Element<T> seguent;
+    private T info;
 
-	public T getInfo() {
-		return info;
-	}
+    public Element(Element<T> seguent,
+            T info) {
+        super();
+        this.seguent = seguent;
+        this.info = info;
+    }
 
-	public Element getSeguent() {
-		return seguent;
-	}
+    public T getInfo() {
+        return info;
+    }
 
-	public Element setSeguent() {
-		return seguent;
-	}
-	
-	@Override
-	public String toString() {
-		return "Element [info=" + info + "]";
-	}
+    public void setSeguent(Element<T> seguent) {
+        this.seguent = seguent;
+    }
+
+    public Element<T> getSeguent() {
+        return seguent;
+    }
+
+    @Override
+    public String toString() {
+        return "ElementSencer [info=" + info + "]";
+    }
 
 }
